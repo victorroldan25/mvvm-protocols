@@ -9,31 +9,37 @@ import Foundation
 
 
 protocol UserDataDelegate {
-    func fetchUserData(users : UserModel)
+    func fetchUserData(users : UserDataToPrint)
     func failedFetchingData(error : Error)
 }
 
 class UserDetailsViewModel{
-    private let apiManager   : APIManager
-    private let endpoint     : Endpoint
+    private let apiManager   : APIManagerDelegate
     private var viewDelegate : UserDataDelegate?
     
-    init(apiManager : APIManager, endpoint : Endpoint, viewDelegate : UserDataDelegate){
+    init(apiManager : APIManagerDelegate, viewDelegate : UserDataDelegate){
         self.apiManager = apiManager
-        self.endpoint = endpoint
         self.viewDelegate = viewDelegate
     }
-
-    func fetchUserById(){
-        let url = URL(string: endpoint.urlString)!
-        apiManager.fetchItems(url: url) { [weak self] (result : Result<UserModel, Error>) in
+    
+    func fetchUserById(endpoint : Endpoint){
+        apiManager.fetchItems(endpoint: endpoint) { [weak self] (result : Result<UserModel, Error>) in
             switch result{
             case .success(let users):
-                self?.viewDelegate?.fetchUserData(users: users)
-
+                let formatedData = self?.formatData(users: users)
+                self?.viewDelegate?.fetchUserData(users: formatedData!)
+                
             case .failure(let error):
                 self?.viewDelegate?.failedFetchingData(error: error)
             }
         }
+    }
+    
+    func formatData(users : UserModel)->UserDataToPrint{
+        UserDataToPrint(id: String(users.id!),
+                        name:  "Name: "+users.name!,
+                        email: "Email: "+users.email!,
+                        phone: "Phone: "+users.phone!)
+        
     }
 }

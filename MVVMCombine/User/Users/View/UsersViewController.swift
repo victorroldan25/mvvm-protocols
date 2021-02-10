@@ -11,7 +11,7 @@ class UsersViewController: UIViewController {
     
     var viewModel           : UsersViewModel!
     private let apiManager  = APIManager()
-    var users               : [UserDataToPrint] = []
+    private var users       : [UserDataToPrint] = []
     static let cellId       = "CustomCell"
     
     var tableView : UITableView = {
@@ -19,6 +19,7 @@ class UsersViewController: UIViewController {
         tableView.rowHeight = 115
         let nibName = UINib(nibName: UsersViewController.cellId, bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: UsersViewController.cellId)
+        tableView.accessibilityIdentifier = "tableViewUsers"
         return tableView
     }()
     
@@ -40,11 +41,11 @@ class UsersViewController: UIViewController {
     }
     
     private func setupViewModel(){
-        viewModel = UsersViewModel(apiManager: apiManager, endpoint: .usersFetch)
+        viewModel = UsersViewModel(apiManager: apiManager)
     }
     
     private func fetchUsers(){
-        viewModel.fetchUsers {[weak self] (result : Result<[UserDataToPrint], Error>) in
+        viewModel.fetchUsers(endpoint: .usersFetch) {[weak self] (result : Result<[UserDataToPrint], Error>) in
             switch result{
             case .success(let users):
                 self?.users = users
@@ -71,6 +72,7 @@ extension UsersViewController : UITableViewDataSource, UITableViewDelegate{
         let user = self.users[indexPath.row]
         cell.configCell(userData: user)
         cell.delegate = self
+        cell.accessibilityIdentifier = "userNameLabel_\(indexPath.row)"
         return cell
     }
     
@@ -90,6 +92,8 @@ extension UsersViewController : UITableViewDataSource, UITableViewDelegate{
 
 extension UsersViewController : CellCustomDelegate{
     func didTapCell(modelSelected: UserDataToPrint) {
-        print("name: ", modelSelected.name ?? "")
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "userFormVC") as! UserFormViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

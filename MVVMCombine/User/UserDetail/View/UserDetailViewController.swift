@@ -11,7 +11,6 @@ import Combine
 class UserDetailViewController: UIViewController {
 
     @IBOutlet var nameLabel     : UILabel!
-    @IBOutlet var usernameLabel : UILabel!
     @IBOutlet var emailLabel    : UILabel!
     @IBOutlet var phoneLabel    : UILabel!
     @IBOutlet var activityIndicator : UIActivityIndicatorView!
@@ -27,18 +26,21 @@ class UserDetailViewController: UIViewController {
         self.showAndHideActivity(show: true)
         setupViewModel()
         fetchUsers()
+        generalSetup()
         
     }
     
+    private func generalSetup(){
+        self.navigationController?.navigationBar.backItem?.accessibilityLabel = "backToUserList1"
+    }
+    
     private func setupViewModel(){
-        viewModel = UserDetailsViewModel(apiManager: apiManager,
-                                         endpoint: .getUserById(id: userSelected),
-                                         viewDelegate: self)
+        viewModel = UserDetailsViewModel(apiManager: apiManager, viewDelegate: self)
     }
     
     private func fetchUsers(){
         showAndHideActivity(show: true)
-        viewModel.fetchUserById()
+        viewModel.fetchUserById(endpoint: .getUserById(id: userSelected))
     }
     
     private func showAndHideActivity(show : Bool){
@@ -50,16 +52,15 @@ class UserDetailViewController: UIViewController {
         }
     }
     
-    private func showUserInfo(user : UserModel){
+    private func showUserInfo(user : UserDataToPrint){
         nameLabel.text      = user.name
-        usernameLabel.text  = user.username
         emailLabel.text     = user.email
         phoneLabel.text     = user.phone
     }
 }
 
 extension UserDetailViewController : UserDataDelegate{
-    func fetchUserData(users: UserModel) {
+    func fetchUserData(users: UserDataToPrint) {
         DispatchQueue.main.asyncAfter(deadline: .now()+0.4) {
             self.showUserInfo(user: users)
             self.showAndHideActivity(show: false)

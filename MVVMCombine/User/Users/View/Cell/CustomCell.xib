@@ -18,24 +18,28 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leanne Graham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjx-g7-MHB">
                         <rect key="frame" x="19.5" y="18" width="354" height="21"/>
+                        <accessibility key="accessibilityConfiguration" identifier="userNameLabel"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sincere@april.biz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJm-fK-pjV">
                         <rect key="frame" x="19.5" y="47" width="354" height="21"/>
+                        <accessibility key="accessibilityConfiguration" identifier="userEmailLabel"/>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone: 1-770-736-8031 x56442" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkJ-E1-VZI">
                         <rect key="frame" x="19.5" y="76" width="354" height="21"/>
+                        <accessibility key="accessibilityConfiguration" identifier="userPhoneLabel"/>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsp-4S-EBd">
                         <rect key="frame" x="326" y="42.5" width="55" height="30"/>
+                        <accessibility key="accessibilityConfiguration" identifier="tapMe"/>
                         <state key="normal" title="Tap me!"/>
                         <connections>
                             <action selector="tapMePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Yd-fn-WHv"/>
@@ -61,6 +65,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <accessibility key="accessibilityConfiguration" identifier="usersCellView"/>
             <connections>
                 <outlet property="emailLabelString" destination="WJm-fK-pjV" id="Tkf-xq-fXH"/>
                 <outlet property="nameLabelString" destination="wjx-g7-MHB" id="2hI-OO-GQX"/>

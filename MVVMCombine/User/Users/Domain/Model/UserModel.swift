@@ -22,3 +22,14 @@ struct UserModel : Codable{
         case phone
     }
 }
+
+struct UserDataToPrint{
+    let id    : String?
+    let name  : String?
+    let email : String?
+    let phone : String?
+    
+    static func emptyData()->UserDataToPrint{
+        return UserDataToPrint(id: "", name: "", email: "", phone: "")
+    }
+}

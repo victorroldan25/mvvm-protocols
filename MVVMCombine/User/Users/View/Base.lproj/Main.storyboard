@@ -52,25 +52,19 @@
                                 <rect key="frame" x="20.5" y="68" width="373" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GX-1x-62I">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="75"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffA-yi-dtM">
-                                        <rect key="frame" x="0.0" y="75" width="373" height="75"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="100"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ced-hf-1z6">
-                                        <rect key="frame" x="0.0" y="150" width="373" height="75"/>
+                                        <rect key="frame" x="0.0" y="100" width="373" height="100"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRF-Ag-Sgd">
-                                        <rect key="frame" x="0.0" y="225" width="373" height="75"/>
+                                        <rect key="frame" x="0.0" y="200" width="373" height="100"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,12 +94,26 @@
                         <outlet property="emailLabel" destination="ced-hf-1z6" id="7iX-4a-zZQ"/>
                         <outlet property="nameLabel" destination="4GX-1x-62I" id="mtc-ec-flH"/>
                         <outlet property="phoneLabel" destination="ZRF-Ag-Sgd" id="Ure-iO-bfl"/>
-                        <outlet property="usernameLabel" destination="ffA-yi-dtM" id="wqp-am-sud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUr-rW-Jk1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868" y="67"/>
+        </scene>
+        <!--User Form View Controller-->
+        <scene sceneID="Rb2-u9-xWJ">
+            <objects>
+                <viewController storyboardIdentifier="userFormVC" id="k9b-ub-n2D" customClass="UserFormViewController" customModule="MVVMCombine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cEy-BM-WFT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sa1-QS-ekq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZ5-Gz-mdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728" y="67"/>
         </scene>
     </scenes>
     <resources>
