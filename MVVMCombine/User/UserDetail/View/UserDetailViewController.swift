@@ -71,6 +71,4 @@ extension UserDetailViewController : UserDataDelegate{
         print("Error: ", error.localizedDescription)
         showAndHideActivity(show: false)
     }
-    
-    
 }
