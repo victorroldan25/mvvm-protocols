@@ -22,7 +22,7 @@ class UserViewTests: XCTestCase {
         viewModel = nil
     }
 
-    func testCallUsers_ShourReturnListOfUsers(){
+    func testCallUsers_ShouldReturnListOfUsers(){
         viewModel.fetchUsers(endpoint: .usersFetch) {(result : Result<[UserDataToPrint], Error>) in
             switch result{
             case .success(let users):
@@ -32,7 +32,7 @@ class UserViewTests: XCTestCase {
             }
         }
     }
-    func testCallUsers_ShourReturnFailure(){
+    func testCallUsers_ShouldReturnFailure(){
         viewModel.fetchUsers(endpoint: .usersFetchMock) {(result : Result<[UserDataToPrint], Error>) in
             switch result{
             case .success(let users):
@@ -56,7 +56,7 @@ class UserViewTests: XCTestCase {
         let formattedData = viewModel.formatData(users: userModelMock)
         
         //Assertion to validate if it received a list
-        XCTAssertTrue(formattedData.count>1, "We should receive a list of UserDataToPrint")
+        XCTAssertTrue(formattedData.count>0, "We should receive a list of UserDataToPrint")
         
         //Assertion if the returned data comply with the correct format.
         XCTAssertTrue(formattedData.first!.name == "Name: "+userModelMock.first!.name!)
