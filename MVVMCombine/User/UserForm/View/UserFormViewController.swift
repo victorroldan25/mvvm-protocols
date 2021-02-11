@@ -9,21 +9,51 @@ import UIKit
 
 class UserFormViewController: UIViewController {
 
+    //IBOutlets
+    @IBOutlet weak var nameTextField    : UITextField!
+    @IBOutlet weak var emailTextField   : UITextField!
+    @IBOutlet weak var phoneTextField   : UITextField!
+    @IBOutlet weak var updateUserButton : UIButton!
+    //Vars
+    private var viewModel : UserFormViewModel!
+    var userDataToPrint : UserDataToPrint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configViewModel()
+        configFormInfo()
+    }
+    
+    private func configFormInfo(){
+        updateUserButton.accessibilityIdentifier = "updateUserButton"
+        title = "Update User"
+        nameTextField.text  = userDataToPrint.name  ?? ""
+        emailTextField.text = userDataToPrint.email ?? ""
+        phoneTextField.text = userDataToPrint.phone ?? ""
+    }
+    
+    private func configViewModel(){
+        let formModelValidator = UserFormValidator()
+        viewModel = UserFormViewModel(apiManager: APIManager(), viewDelegate: self, formModelValidator: formModelValidator)
+    }
+    
+    @IBAction func userUpdateButtonPressed(_ sender: Any) {
+        let userFormModel = UserFormModel(name: nameTextField.text,
+                                          email: emailTextField.text,
+                                          phone: phoneTextField.text)
+        
+        viewModel.processUpdateUser(userFormModel: userFormModel)
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension UserFormViewController : UserFormDelegate{
+    func didFailValidationForm(message: String) {
+        CustomAlert.show(in: self, withMessage: message, withTitle: "Validation Failed")
     }
-    */
-
+    
+    func successResponseAfterSave(message: String) {
+        CustomAlert.show(in: self, withMessage: message)
+    }
 }

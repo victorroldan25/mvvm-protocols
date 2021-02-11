@@ -46,10 +46,9 @@ class UserDetailViewTests: XCTestCase {
         let formattedData = viewModel.formatData(users: userModelMock)
         
         //Assert if the returned data comply with the correct format.
-        XCTAssertTrue(formattedData.name == "Name:"+userModelMock.name!, "The name attribute should contains the prefix Name:")
-        XCTAssertTrue(formattedData.email == "Email:"+userModelMock.email!, "The name attribute should contains the prefix Email:")
-        XCTAssertTrue(formattedData.phone == "Phone:"+userModelMock.phone!, "The name attribute should contains the prefix Phone:")
-        
+        XCTAssertTrue(formattedData.name == "Name: "+userModelMock.name!, "The name attribute should contains the prefix Name:")
+        XCTAssertTrue(formattedData.email == "Email: "+userModelMock.email!, "The name attribute should contains the prefix Email:")
+        XCTAssertTrue(formattedData.phone == "Phone: "+userModelMock.phone!, "The name attribute should contains the prefix Phone:")
     }
 
 }

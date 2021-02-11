@@ -107,9 +107,64 @@
                     <view key="view" contentMode="scaleToFill" id="cEy-BM-WFT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="244-zY-bzl">
+                                <rect key="frame" x="20.5" y="94" width="373" height="170"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lMa-7E-NUn">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="nameTFIdentifier"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rnv-Tk-Jgk">
+                                        <rect key="frame" x="0.0" y="60" width="373" height="50"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="emailTFIdentifier"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gk4-yg-Siw">
+                                        <rect key="frame" x="0.0" y="120" width="373" height="50"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="phoneTFIdentifier"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="8Hp-bI-6FD"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-zN-FJr">
+                                <rect key="frame" x="95" y="304" width="224" height="45"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qvW-zN-FJr" secondAttribute="height" multiplier="224:45" id="qcQ-rD-oPF"/>
+                                </constraints>
+                                <state key="normal" title="Update User">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="userUpdateButtonPressed:" destination="k9b-ub-n2D" eventType="touchUpInside" id="g8W-iC-K5Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sa1-QS-ekq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qvW-zN-FJr" firstAttribute="centerX" secondItem="244-zY-bzl" secondAttribute="centerX" id="4aE-P9-CH5"/>
+                            <constraint firstItem="244-zY-bzl" firstAttribute="top" secondItem="sa1-QS-ekq" secondAttribute="top" constant="50" id="TLT-0E-F2V"/>
+                            <constraint firstItem="qvW-zN-FJr" firstAttribute="top" secondItem="244-zY-bzl" secondAttribute="bottom" constant="40" id="Xep-4I-WZ4"/>
+                            <constraint firstItem="244-zY-bzl" firstAttribute="centerX" secondItem="sa1-QS-ekq" secondAttribute="centerX" id="jZd-S9-LBn"/>
+                            <constraint firstItem="qvW-zN-FJr" firstAttribute="width" secondItem="244-zY-bzl" secondAttribute="width" multiplier="0.6" id="n7z-ZW-UjA"/>
+                            <constraint firstItem="244-zY-bzl" firstAttribute="width" secondItem="cEy-BM-WFT" secondAttribute="width" multiplier="0.9" id="wab-I9-ijc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Rnv-Tk-Jgk" id="ie9-1J-Phw"/>
+                        <outlet property="nameTextField" destination="lMa-7E-NUn" id="Fzo-bC-Nf2"/>
+                        <outlet property="phoneTextField" destination="Gk4-yg-Siw" id="Agh-Nf-X9u"/>
+                        <outlet property="updateUserButton" destination="qvW-zN-FJr" id="cIB-EY-nw9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZ5-Gz-mdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,6 +174,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

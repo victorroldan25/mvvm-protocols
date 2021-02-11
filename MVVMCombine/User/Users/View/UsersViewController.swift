@@ -94,6 +94,7 @@ extension UsersViewController : CellCustomDelegate{
     func didTapCell(modelSelected: UserDataToPrint) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "userFormVC") as! UserFormViewController
+        vc.userDataToPrint = modelSelected
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

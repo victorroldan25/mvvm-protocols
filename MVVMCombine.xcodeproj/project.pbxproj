@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E17E27025D5CA4300EEDB16 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E17E26F25D5CA4300EEDB16 /* Common.swift */; };
+		8E17E27825D5D21A00EEDB16 /* UserFormViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E17E27725D5D21A00EEDB16 /* UserFormViewTests.swift */; };
+		8E17E28025D5D2A700EEDB16 /* MockUserFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E17E27F25D5D2A700EEDB16 /* MockUserFormView.swift */; };
+		8E17E28525D5D32400EEDB16 /* MockUserFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E17E28425D5D32400EEDB16 /* MockUserFormValidator.swift */; };
 		8E2E446F25CB362400CED2E6 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E446D25CB362400CED2E6 /* CustomCell.swift */; };
 		8E2E447025CB362400CED2E6 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2E446E25CB362400CED2E6 /* CustomCell.xib */; };
 		8E2E447E25CB627800CED2E6 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E447D25CB627800CED2E6 /* UserDetailViewController.swift */; };
 		8E2E448225CB635C00CED2E6 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E448125CB635C00CED2E6 /* UserDetailsViewModel.swift */; };
 		8E42A14C25D418CA00EFD794 /* UserDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42A14B25D418CA00EFD794 /* UserDetailViewTests.swift */; };
 		8E42A15625D41A0200EFD794 /* MockUserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42A15525D41A0200EFD794 /* MockUserDetailView.swift */; };
+		8E42B20025D5BA6D00E41CAA /* UserFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42B1FF25D5BA6D00E41CAA /* UserFormModel.swift */; };
 		8E558A8C25D42CCF00B33515 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E558A8B25D42CCF00B33515 /* user.json */; };
 		8E558A9625D4361F00B33515 /* UserViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E558A9525D4361F00B33515 /* UserViewUITests.swift */; };
 		8E558AA325D448D600B33515 /* UserFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E558AA225D448D600B33515 /* UserFormViewController.swift */; };
+		8E737EB925D593E700ABF955 /* UserFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E737EB825D593E700ABF955 /* UserFormViewModel.swift */; };
+		8E737EBE25D597AD00ABF955 /* UserFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E737EBD25D597AD00ABF955 /* UserFormValidator.swift */; };
 		8E87EE7425C0946400CE9603 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87EE7325C0946400CE9603 /* UsersViewModel.swift */; };
 		8E87EE7825C094FC00CE9603 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87EE7725C094FC00CE9603 /* APIManager.swift */; };
 		8EB9F0CD25D34B4C00DA2111 /* MVVMCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB9F0CC25D34B4C00DA2111 /* MVVMCombineTests.swift */; };
@@ -49,17 +56,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E17E26F25D5CA4300EEDB16 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		8E17E27725D5D21A00EEDB16 /* UserFormViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewTests.swift; sourceTree = "<group>"; };
+		8E17E27F25D5D2A700EEDB16 /* MockUserFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserFormView.swift; sourceTree = "<group>"; };
+		8E17E28425D5D32400EEDB16 /* MockUserFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserFormValidator.swift; sourceTree = "<group>"; };
 		8E2E446D25CB362400CED2E6 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		8E2E446E25CB362400CED2E6 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		8E2E447D25CB627800CED2E6 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		8E2E448125CB635C00CED2E6 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		8E42A14B25D418CA00EFD794 /* UserDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewTests.swift; sourceTree = "<group>"; };
 		8E42A15525D41A0200EFD794 /* MockUserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDetailView.swift; sourceTree = "<group>"; };
+		8E42B1FF25D5BA6D00E41CAA /* UserFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormModel.swift; sourceTree = "<group>"; };
 		8E558A8B25D42CCF00B33515 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		8E558A9325D4361F00B33515 /* MVVMCombineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMCombineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E558A9525D4361F00B33515 /* UserViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewUITests.swift; sourceTree = "<group>"; };
 		8E558A9725D4361F00B33515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E558AA225D448D600B33515 /* UserFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewController.swift; sourceTree = "<group>"; };
+		8E737EB825D593E700ABF955 /* UserFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewModel.swift; sourceTree = "<group>"; };
+		8E737EBD25D597AD00ABF955 /* UserFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormValidator.swift; sourceTree = "<group>"; };
 		8E87EE7325C0946400CE9603 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		8E87EE7725C094FC00CE9603 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		8EB9F0CA25D34B4C00DA2111 /* MVVMCombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMCombineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,9 +121,9 @@
 		8E0689E625D2C862008C4842 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				8E2E447925CB61D300CED2E6 /* UserDetail */,
 				8E558AA025D448B100B33515 /* UserForm */,
 				8EFF4B5725C0926200B0216C /* Users */,
-				8E2E447925CB61D300CED2E6 /* UserDetail */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -129,6 +143,32 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		8E17E27425D5D1DD00EEDB16 /* UserForm */ = {
+			isa = PBXGroup;
+			children = (
+				8E17E27625D5D1EE00EEDB16 /* Mocks */,
+				8E17E27525D5D1E700EEDB16 /* View */,
+			);
+			path = UserForm;
+			sourceTree = "<group>";
+		};
+		8E17E27525D5D1E700EEDB16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E17E27725D5D21A00EEDB16 /* UserFormViewTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E17E27625D5D1EE00EEDB16 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8E17E27F25D5D2A700EEDB16 /* MockUserFormView.swift */,
+				8E17E28425D5D32400EEDB16 /* MockUserFormValidator.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		8E2E446C25CB360600CED2E6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				8EB9F0C425D34A8800DA2111 /* Resources */,
+				8E17E26F25D5CA4300EEDB16 /* Common.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -199,7 +240,9 @@
 		8E558AA025D448B100B33515 /* UserForm */ = {
 			isa = PBXGroup;
 			children = (
+				8E737EB725D5918A00ABF955 /* Model */,
 				8E558AA125D448C100B33515 /* View */,
+				8E737EB625D5918200ABF955 /* ViewModel */,
 			);
 			path = UserForm;
 			sourceTree = "<group>";
@@ -210,6 +253,23 @@
 				8E558AA225D448D600B33515 /* UserFormViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8E737EB625D5918200ABF955 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E737EB825D593E700ABF955 /* UserFormViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8E737EB725D5918A00ABF955 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E737EBD25D597AD00ABF955 /* UserFormValidator.swift */,
+				8E42B1FF25D5BA6D00E41CAA /* UserFormModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8E87EE7625C094E800CE9603 /* APIManager */ = {
@@ -243,6 +303,7 @@
 		8EB9F0D625D34B6300DA2111 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				8E17E27425D5D1DD00EEDB16 /* UserForm */,
 				8E42A14625D4156000EFD794 /* Mocks */,
 				8EB9F0DD25D34C5F00DA2111 /* View */,
 			);
@@ -480,8 +541,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E42A14C25D418CA00EFD794 /* UserDetailViewTests.swift in Sources */,
+				8E17E28525D5D32400EEDB16 /* MockUserFormValidator.swift in Sources */,
+				8E17E28025D5D2A700EEDB16 /* MockUserFormView.swift in Sources */,
 				8EB9F0D825D34BDB00DA2111 /* MockApiManager.swift in Sources */,
 				8E42A15625D41A0200EFD794 /* MockUserDetailView.swift in Sources */,
+				8E17E27825D5D21A00EEDB16 /* UserFormViewTests.swift in Sources */,
 				8EB9F0ED25D34F0100DA2111 /* UserViewTests.swift in Sources */,
 				8EB9F0CD25D34B4C00DA2111 /* MVVMCombineTests.swift in Sources */,
 			);
@@ -491,16 +555,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E737EB925D593E700ABF955 /* UserFormViewModel.swift in Sources */,
+				8E737EBE25D597AD00ABF955 /* UserFormValidator.swift in Sources */,
 				8E87EE7825C094FC00CE9603 /* APIManager.swift in Sources */,
 				8EFF4B4625C0923200B0216C /* UsersViewController.swift in Sources */,
 				8E2E448225CB635C00CED2E6 /* UserDetailsViewModel.swift in Sources */,
 				8E2E447E25CB627800CED2E6 /* UserDetailViewController.swift in Sources */,
+				8E17E27025D5CA4300EEDB16 /* Common.swift in Sources */,
 				8EFF4B4225C0923200B0216C /* AppDelegate.swift in Sources */,
 				8EFF4B5D25C092B000B0216C /* UserModel.swift in Sources */,
 				8EFF4B4425C0923200B0216C /* SceneDelegate.swift in Sources */,
 				8E2E446F25CB362400CED2E6 /* CustomCell.swift in Sources */,
 				8E87EE7425C0946400CE9603 /* UsersViewModel.swift in Sources */,
 				8E558AA325D448D600B33515 /* UserFormViewController.swift in Sources */,
+				8E42B20025D5BA6D00E41CAA /* UserFormModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6247PH2JQ;
 				INFOPLIST_FILE = MVVMCombineUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,7 +633,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6247PH2JQ;
 				INFOPLIST_FILE = MVVMCombineUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,7 +654,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6247PH2JQ;
 				INFOPLIST_FILE = MVVMCombineTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,7 +675,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6247PH2JQ;
 				INFOPLIST_FILE = MVVMCombineTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -752,7 +820,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.victor.tests.MVVMCombine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -771,7 +839,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.victor.tests.MVVMCombine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

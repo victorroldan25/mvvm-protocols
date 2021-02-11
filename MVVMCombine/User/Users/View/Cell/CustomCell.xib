@@ -40,7 +40,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsp-4S-EBd">
                         <rect key="frame" x="326" y="42.5" width="55" height="30"/>
                         <accessibility key="accessibilityConfiguration" identifier="tapMe"/>
-                        <state key="normal" title="Tap me!"/>
+                        <state key="normal" title="Update!"/>
                         <connections>
                             <action selector="tapMePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Yd-fn-WHv"/>
                         </connections>
