@@ -70,6 +70,7 @@
                 <outlet property="emailLabelString" destination="WJm-fK-pjV" id="Tkf-xq-fXH"/>
                 <outlet property="nameLabelString" destination="wjx-g7-MHB" id="2hI-OO-GQX"/>
                 <outlet property="phoneLabelString" destination="EkJ-E1-VZI" id="qsn-7r-zXE"/>
+                <outlet property="updateButton" destination="Jsp-4S-EBd" id="805-2X-8Sm"/>
             </connections>
             <point key="canvasLocation" x="87.681159420289859" y="119.53125"/>
         </tableViewCell>

@@ -12,10 +12,15 @@ protocol UserFetchProtocol {
     func showUsers(userData : [UserDataToPrint])
 }
 
-class UsersViewModel{
+protocol UserViewModelDelegate {
+    init(apiManager : APIManagerDelegate)
+    func fetchUsers(endpoint: Endpoint, completion : @escaping (Result<[UserDataToPrint], Error>) -> Void)
+}
+
+class UsersViewModel : UserViewModelDelegate{
     private let apiManager : APIManagerDelegate
     
-    init(apiManager : APIManagerDelegate){
+    required init(apiManager : APIManagerDelegate){
         self.apiManager = apiManager
     }
     

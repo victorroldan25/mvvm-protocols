@@ -9,7 +9,7 @@ import UIKit
 
 class UsersViewController: UIViewController {
     
-    var viewModel           : UsersViewModel!
+    var viewModel           : UserViewModelDelegate!
     private let apiManager  = APIManager()
     private var users       : [UserDataToPrint] = []
     static let cellId       = "CustomCell"
@@ -19,7 +19,7 @@ class UsersViewController: UIViewController {
         tableView.rowHeight = 115
         let nibName = UINib(nibName: UsersViewController.cellId, bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: UsersViewController.cellId)
-        tableView.accessibilityIdentifier = "tableViewUsers"
+        tableView.accessibilityIdentifier = tableViewAcceibilityIdentifier
         return tableView
     }()
     
@@ -44,7 +44,7 @@ class UsersViewController: UIViewController {
         viewModel = UsersViewModel(apiManager: apiManager)
     }
     
-    private func fetchUsers(){
+    func fetchUsers(){
         viewModel.fetchUsers(endpoint: .usersFetch) {[weak self] (result : Result<[UserDataToPrint], Error>) in
             switch result{
             case .success(let users):

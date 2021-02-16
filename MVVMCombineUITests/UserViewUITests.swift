@@ -34,7 +34,7 @@ class UserViewUITests: XCTestCase {
         tableView.swipeDown()
         tableView.cells["userNameLabel_5"].buttons["tapMe"].tap()
         
-        
+        /*
         //Clean all UITextFields
         let nameTextField = app.textFields["nameTFIdentifier"]
         nameTextField.clearAndEnterText(text: "")
@@ -74,7 +74,8 @@ class UserViewUITests: XCTestCase {
         phoneTextField.clearAndEnterText(text: "1234567890")
         app.buttons["updateUserButton"].tap()
         app.alerts["customAlert"].scrollViews.otherElements.buttons["OK"].tap()
-
+         */
+        
         //Go Back.
         app.navigationBars.buttons.element(boundBy: 0).tap()
 

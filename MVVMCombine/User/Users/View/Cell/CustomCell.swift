@@ -15,8 +15,10 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var nameLabelString  : UILabel!
     @IBOutlet weak var emailLabelString : UILabel!
     @IBOutlet weak var phoneLabelString : UILabel!
-    var delegate : CellCustomDelegate?
-    private var cellModel : UserDataToPrint!
+    @IBOutlet weak var updateButton     : UIButton!
+    
+    var delegate                        : CellCustomDelegate?
+    private var cellModel               : UserDataToPrint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
