@@ -17,6 +17,7 @@ enum Endpoint : Equatable{
     case usersFetch
     case getUserById(id : String)
     case usersFetchMock
+    case updateUser
     var urlString : String{
         switch self {
         case .usersFetch:
@@ -25,6 +26,8 @@ enum Endpoint : Equatable{
             return Endpoint.url
         case .getUserById(let userId):
             return Endpoint.url+"users/"+userId
+        case .updateUser:
+            return Endpoint.url+"users/save"
         }
     }
 }

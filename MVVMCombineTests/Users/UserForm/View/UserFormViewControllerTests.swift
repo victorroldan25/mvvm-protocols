@@ -93,5 +93,31 @@ class UserFormViewControllerTests: XCTestCase {
         XCTAssertTrue(mockViewModel.processUpdateUserCalled, "No se llamó viewModel.processUpdateUser luego de presionar el botón Update User")
     }
     
+    func testUserFormViewConroller_ConfigFormInfoReceivedEmptyDataToPrint_ShouldFillupTextFieldsWithEmptyValues(){
+        vc.userDataToPrint = UserDataToPrint(id: nil, name: nil, email: nil, phone: nil)
+        vc.configFormInfo()
+        //Valido que cada campo tenga el valor correcto que se le pasó al instanciar el ViewController a través de userDataToPrint
+        XCTAssertEqual(vc.nameTextField.text!, "", "El TextField Name no tiene un valor vacío.")
+        XCTAssertEqual(vc.emailTextField.text!, "", "El TextField Email no tiene un valor vacío.")
+        XCTAssertEqual(vc.phoneTextField.text!, "", "El TextField Phone no tiene un valor vacío.")
+    }
+    
+    func testUserFormViewController_ShouldCallDelegateSuccessResponseAfterSave(){
+        //Esta llamada debería devolver un success al delegate
+        let formModelValidator = UserFormValidator()
+        let mockViewModel1 = MockUserFormViewModel(apiManager: MockApiManager(), viewDelegate: vc, formModelValidator: formModelValidator)
+        vc.viewModel = mockViewModel1
+        vc.viewModel.processUpdateUser(userFormModel: UserFormModel.emptyData(), endpoint: .updateUser)
+        XCTAssertTrue(mockViewModel1.processUpdateUserCalled, "Esta prueba debió ser sucess")
 
+    }
+
+    func testUserFormViewController_ShouldCallDelegateDidFailValidationForm(){
+        //Esta llamada debería devolver un error al delegate
+        let formModelValidator2 = UserFormValidator()
+        let mockViewModel2 = MockUserFormViewModel(apiManager: MockApiManager(), viewDelegate: vc, formModelValidator: formModelValidator2)
+        vc.viewModel = mockViewModel2
+        vc.viewModel.processUpdateUser(userFormModel: UserFormModel.emptyData(), endpoint: .usersFetchMock)
+        XCTAssertTrue(mockViewModel2.didFailValidationForm, "Esta prueba debió fallar")
+    }
 }

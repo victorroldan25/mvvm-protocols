@@ -73,4 +73,20 @@ class UserDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(vc.emailLabel.text!, mockUserDataToPrint.email ?? "", "El valor del Label emailLabel no es correcto.")
         XCTAssertEqual(vc.phoneLabel.text!, mockUserDataToPrint.phone ?? "", "El valor del Label phoneLabel no es correcto.")
     }
+    
+    func testUserDetailViewController_WhenCallFetchUserById_ShouldReturnFailure(){
+        //Creación de dependencias
+        let mockApiManager = MockApiManager()
+        
+        //Se inyectan las dependencias
+        let mockViewModel = MockUserDetailViewModel(apiManager: mockApiManager, viewDelegate: vc.self)
+        
+        //Se sustituye el viewModel por el mockViewModel
+        vc.viewModel = mockViewModel
+        
+        vc.viewModel.fetchUserById(endpoint: .usersFetchMock)
+        
+        XCTAssertTrue(mockViewModel.failedFetchingData, "Debió haber fallado la búsqueda")
+        
+    }
 }

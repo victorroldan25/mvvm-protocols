@@ -26,9 +26,9 @@ class UserViewTests: XCTestCase {
         viewModel.fetchUsers(endpoint: .usersFetch) {(result : Result<[UserDataToPrint], Error>) in
             switch result{
             case .success(let users):
-                XCTAssertTrue(users.count>0, "This should be a User List")
+                XCTAssertTrue(users.count>0, "Esto debería retornar un listado de UserDataToPrint")
             case .failure(let error):
-                XCTAssertNil(error, "This error should be nil")
+                XCTAssertNil(error, "Este error debería ser nil")
             }
         }
     }
@@ -36,9 +36,9 @@ class UserViewTests: XCTestCase {
         viewModel.fetchUsers(endpoint: .usersFetchMock) {(result : Result<[UserDataToPrint], Error>) in
             switch result{
             case .success(let users):
-                XCTAssertTrue((users.count==0), "We shouldn't receive any users here")
+                XCTAssertTrue((users.count==0), "No se debería recibir ningún usuario aquí")
             case .failure(let error):
-                XCTAssertNotNil(error, "The error message shouldn't be nill")
+                XCTAssertNotNil(error, "El error no debería ser nil")
             }
         }
     }
@@ -56,7 +56,7 @@ class UserViewTests: XCTestCase {
         let formattedData = viewModel.formatData(users: userModelMock)
         
         //Assertion to validate if it received a list
-        XCTAssertTrue(formattedData.count>0, "We should receive a list of UserDataToPrint")
+        XCTAssertTrue(formattedData.count>0, "Se debería recibir un listado de UserDataToPrint")
         
         //Assertion if the returned data comply with the correct format.
         XCTAssertTrue(formattedData.first!.name == "Name: "+userModelMock.first!.name!)

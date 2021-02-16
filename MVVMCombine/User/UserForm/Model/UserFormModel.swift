@@ -12,4 +12,8 @@ struct UserFormModel{
     var name : String?
     var email : String?
     var phone : String?
+    
+    static func emptyData()->UserFormModel{
+        return UserFormModel(name: "", email: "", phone: "")
+    }
 }

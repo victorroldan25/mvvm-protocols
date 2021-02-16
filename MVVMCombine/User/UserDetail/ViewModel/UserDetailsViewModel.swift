@@ -7,12 +7,13 @@
 
 import Foundation
 
-
+//Se crear un Delegate para poder dar respuesta en el controller que hizo la inyección de dependencias.
 protocol UserDataDelegate {
     func fetchUserData(users : UserDataToPrint)
     func failedFetchingData(error : Error)
 }
 
+//Se crea un delegate para poder crear mocks del ViewModel y así se puedan probar funcionalidades individualmente
 protocol UserDetailViewModelDelegate {
     init(apiManager : APIManagerDelegate, viewDelegate : UserDataDelegate)
     func fetchUserById(endpoint : Endpoint)

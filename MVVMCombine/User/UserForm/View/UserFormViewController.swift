@@ -24,7 +24,7 @@ class UserFormViewController: UIViewController {
         configFormInfo()
     }
     
-    private func configFormInfo(){
+    func configFormInfo(){
         updateUserButton.accessibilityIdentifier = "updateUserButton"
         title = "Update User"
         nameTextField.text  = userDataToPrint.name  ?? ""
@@ -42,7 +42,7 @@ class UserFormViewController: UIViewController {
                                           email: emailTextField.text,
                                           phone: phoneTextField.text)
         
-        viewModel.processUpdateUser(userFormModel: userFormModel)
+        viewModel.processUpdateUser(userFormModel: userFormModel, endpoint: .updateUser)
     }
     
 

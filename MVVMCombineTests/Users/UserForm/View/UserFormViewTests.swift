@@ -28,14 +28,14 @@ class UserFormViewTests: XCTestCase {
     //Debería obtener un success response ya que la data que se envió es correcta
     func testUserFormViewModel_CallProcessUpdateUser_ShouldPassTheTest(){
         let userFormModel = UserFormModel(name: "Victor", email: "test@test.com", phone: "1234567890")
-        viewModel.processUpdateUser(userFormModel: userFormModel)
+        viewModel.processUpdateUser(userFormModel: userFormModel, endpoint: .updateUser)
         XCTAssertTrue(mockViewDelegate.successResponse)
     }
 
     //En este test quiero validar que se obtenga un error ya que el Name es muy corto.
     func testUserFormViewModel_CallProcessUpdateUser_ShouldFailTheTest(){
         let userFormModel1 = UserFormModel(name: "Vi", email: "test@test.com", phone: "12345678910")
-        viewModel.processUpdateUser(userFormModel: userFormModel1)
+        viewModel.processUpdateUser(userFormModel: userFormModel1, endpoint: .updateUser)
         XCTAssertTrue(mockViewDelegate.failValidations)
         
     }
@@ -61,5 +61,29 @@ class UserFormViewTests: XCTestCase {
         
         //Debería fallar porque el teléfono es incorrecto
         XCTAssertFalse(mockUserValidator.isPhoneValid(phone: "1234567"))
+    }
+    
+    func testUserFormViewModel_FailEachValidation(){
+        mockViewDelegate = MockUserFormView()
+        mockUserValidator = UserFormValidator()
+        viewModel = UserFormViewModel(apiManager: MockApiManager(), viewDelegate: mockViewDelegate, formModelValidator: mockUserValidator)
+        
+        let userFormModel1 = UserFormModel(name: "J", email: "test@test.com", phone: "1234567890")
+        viewModel.processUpdateUser(userFormModel: userFormModel1, endpoint: .updateUser)
+        XCTAssertTrue(mockViewDelegate.failValidations, "Como el nombre no cumple con el min length, debería retornar true pero está obteniendo un false.")
+        
+        mockViewDelegate = MockUserFormView()
+        mockUserValidator = UserFormValidator()
+        viewModel = UserFormViewModel(apiManager: MockApiManager(), viewDelegate: mockViewDelegate, formModelValidator: mockUserValidator)
+        let userFormModel2 = UserFormModel(name: "John Doe", email: "testtest.com", phone: "1234567890")
+        viewModel.processUpdateUser(userFormModel: userFormModel2, endpoint: .updateUser)
+        XCTAssertTrue(mockViewDelegate.failValidations, "Como el email no es válido, debería retornar true pero está obteniendo un false.")
+        
+        mockViewDelegate = MockUserFormView()
+        mockUserValidator = UserFormValidator()
+        viewModel = UserFormViewModel(apiManager: MockApiManager(), viewDelegate: mockViewDelegate, formModelValidator: mockUserValidator)
+        let userFormModel3 = UserFormModel(name: "John Doe", email: "test@test.com", phone: "1234567")
+        viewModel.processUpdateUser(userFormModel: userFormModel3, endpoint: .updateUser)
+        XCTAssertTrue(mockViewDelegate.failValidations, "Como el phone no es válido, debería retornar true pero está obteniendo un false.")
     }
 }

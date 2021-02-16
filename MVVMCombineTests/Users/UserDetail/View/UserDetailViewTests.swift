@@ -26,7 +26,7 @@ class UserDetailViewTests: XCTestCase {
         viewModel.fetchUserById(endpoint: .getUserById(id: "1"))
         
         //Evaluate if the responses is an UserModel
-        XCTAssertTrue(viewDelegate.receiveUserModel, "Didn't receive the user model properly")
+        XCTAssertTrue(viewDelegate.receiveUserModel, "No se recibió el UserModel correctamente")
     }
     
     func testUserDetailView_ShouldReceiveAnError(){
@@ -34,7 +34,7 @@ class UserDetailViewTests: XCTestCase {
         viewModel.fetchUserById(endpoint: .usersFetchMock)
         
         //Evaluate if the response is an error.
-        XCTAssertTrue(viewDelegate.receiveErrorFetchingData, "Didn't receive the error properly")
+        XCTAssertTrue(viewDelegate.receiveErrorFetchingData, "No se recibió el error correctamente.")
     }
     
     //Unit test
@@ -46,9 +46,9 @@ class UserDetailViewTests: XCTestCase {
         let formattedData = viewModel.formatData(users: userModelMock)
         
         //Assert if the returned data comply with the correct format.
-        XCTAssertTrue(formattedData.name == "Name: "+userModelMock.name!, "The name attribute should contains the prefix Name:")
-        XCTAssertTrue(formattedData.email == "Email: "+userModelMock.email!, "The name attribute should contains the prefix Email:")
-        XCTAssertTrue(formattedData.phone == "Phone: "+userModelMock.phone!, "The name attribute should contains the prefix Phone:")
+        XCTAssertTrue(formattedData.name == "Name: "+userModelMock.name!, "El atributo Name debe contener el prefijo Name:")
+        XCTAssertTrue(formattedData.email == "Email: "+userModelMock.email!, "El atributo Email debe contener el prefijo Email:")
+        XCTAssertTrue(formattedData.phone == "Phone: "+userModelMock.phone!, "El atributo Phone debe contener el prefijo Phone:")
     }
 
 }

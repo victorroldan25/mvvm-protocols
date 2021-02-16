@@ -16,7 +16,7 @@ protocol UserFormDelegate {
 //Se crea un delegate para poder crear mocks del ViewModel y así se puedan probar funcionalidades individualmente
 protocol UserFormViewModelDelegate {
     init(apiManager : APIManagerDelegate, viewDelegate : UserFormDelegate, formModelValidator : UserFormValidatorDelegate)
-    func processUpdateUser(userFormModel : UserFormModel)
+    func processUpdateUser(userFormModel : UserFormModel, endpoint : Endpoint)
 }
 
 class UserFormViewModel : UserFormViewModelDelegate{
@@ -46,10 +46,10 @@ class UserFormViewModel : UserFormViewModelDelegate{
         return true
     }
     
-    func processUpdateUser(userFormModel : UserFormModel){
+    func processUpdateUser(userFormModel : UserFormModel, endpoint : Endpoint){
         if !validateForm(userForm: userFormModel) {return}
         
-        //TODO: Call service from here
+        //TODO: Llamar al servicio desde aquí.
         viewDelegate?.successResponseAfterSave(message: "The user was updated sucessfully")
         
     }
