@@ -37,10 +37,12 @@ class UserViewUITests: XCTestCase {
         
         //Clean all UITextFields
         let nameTextField = app.textFields["nameTFIdentifier"]
-        let emailTextField = app.textFields["emailTFIdentifier"]
-        let phoneTextField = app.textFields["phoneTFIdentifier"]
         nameTextField.clearAndEnterText(text: "")
+        
+        let emailTextField = app.textFields["emailTFIdentifier"]
         emailTextField.clearAndEnterText(text: "")
+        
+        let phoneTextField = app.textFields["phoneTFIdentifier"]
         phoneTextField.clearAndEnterText(text: "")
         
         //Incorrect Name

@@ -7,17 +7,24 @@
 
 import Foundation
 
+//Se crear un Delegate para poder dar respuesta en el controller que hizo la inyección de dependencias.
 protocol UserFormDelegate {
     func didFailValidationForm(message : String)
     func successResponseAfterSave(message : String)
 }
 
-class UserFormViewModel{
+//Se crea un delegate para poder crear mocks del ViewModel y así se puedan probar funcionalidades individualmente
+protocol UserFormViewModelDelegate {
+    init(apiManager : APIManagerDelegate, viewDelegate : UserFormDelegate, formModelValidator : UserFormValidatorDelegate)
+    func processUpdateUser(userFormModel : UserFormModel)
+}
+
+class UserFormViewModel : UserFormViewModelDelegate{
     private var apiManager          : APIManagerDelegate?
     private var viewDelegate        : UserFormDelegate?
     private var formModelValidator  : UserFormValidatorDelegate
     
-    init(apiManager : APIManagerDelegate, viewDelegate : UserFormDelegate, formModelValidator : UserFormValidatorDelegate){
+    required init(apiManager : APIManagerDelegate, viewDelegate : UserFormDelegate, formModelValidator : UserFormValidatorDelegate){
         self.apiManager = apiManager
         self.viewDelegate = viewDelegate
         self.formModelValidator = formModelValidator

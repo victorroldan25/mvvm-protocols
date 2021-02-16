@@ -15,7 +15,7 @@ class UserFormViewController: UIViewController {
     @IBOutlet weak var phoneTextField   : UITextField!
     @IBOutlet weak var updateUserButton : UIButton!
     //Vars
-    private var viewModel : UserFormViewModel!
+    var viewModel : UserFormViewModelDelegate!
     var userDataToPrint : UserDataToPrint!
     
     override func viewDidLoad() {

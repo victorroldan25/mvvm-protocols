@@ -25,6 +25,8 @@
 		8E737EBE25D597AD00ABF955 /* UserFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E737EBD25D597AD00ABF955 /* UserFormValidator.swift */; };
 		8E87EE7425C0946400CE9603 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87EE7325C0946400CE9603 /* UsersViewModel.swift */; };
 		8E87EE7825C094FC00CE9603 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87EE7725C094FC00CE9603 /* APIManager.swift */; };
+		8E8CEED025DC0D8E0064AD76 /* UserFormViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8CEECF25DC0D8E0064AD76 /* UserFormViewControllerTests.swift */; };
+		8E8CEED525DC19960064AD76 /* MockUserFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8CEED425DC19960064AD76 /* MockUserFormViewModel.swift */; };
 		8EB9F0CD25D34B4C00DA2111 /* MVVMCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB9F0CC25D34B4C00DA2111 /* MVVMCombineTests.swift */; };
 		8EB9F0D825D34BDB00DA2111 /* MockApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB9F0D725D34BDB00DA2111 /* MockApiManager.swift */; };
 		8EB9F0E025D34D8200DA2111 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB9F0DF25D34D8200DA2111 /* users.json */; };
@@ -76,6 +78,8 @@
 		8E737EBD25D597AD00ABF955 /* UserFormValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormValidator.swift; sourceTree = "<group>"; };
 		8E87EE7325C0946400CE9603 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		8E87EE7725C094FC00CE9603 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		8E8CEECF25DC0D8E0064AD76 /* UserFormViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewControllerTests.swift; sourceTree = "<group>"; };
+		8E8CEED425DC19960064AD76 /* MockUserFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserFormViewModel.swift; sourceTree = "<group>"; };
 		8EB9F0CA25D34B4C00DA2111 /* MVVMCombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMCombineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB9F0CC25D34B4C00DA2111 /* MVVMCombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCombineTests.swift; sourceTree = "<group>"; };
 		8EB9F0CE25D34B4C00DA2111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				8E17E27725D5D21A00EEDB16 /* UserFormViewTests.swift */,
+				8E8CEECF25DC0D8E0064AD76 /* UserFormViewControllerTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			children = (
 				8E17E27F25D5D2A700EEDB16 /* MockUserFormView.swift */,
 				8E17E28425D5D32400EEDB16 /* MockUserFormValidator.swift */,
+				8E8CEED425DC19960064AD76 /* MockUserFormViewModel.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -542,8 +548,10 @@
 			files = (
 				8E42A14C25D418CA00EFD794 /* UserDetailViewTests.swift in Sources */,
 				8E17E28525D5D32400EEDB16 /* MockUserFormValidator.swift in Sources */,
+				8E8CEED025DC0D8E0064AD76 /* UserFormViewControllerTests.swift in Sources */,
 				8E17E28025D5D2A700EEDB16 /* MockUserFormView.swift in Sources */,
 				8EB9F0D825D34BDB00DA2111 /* MockApiManager.swift in Sources */,
+				8E8CEED525DC19960064AD76 /* MockUserFormViewModel.swift in Sources */,
 				8E42A15625D41A0200EFD794 /* MockUserDetailView.swift in Sources */,
 				8E17E27825D5D21A00EEDB16 /* UserFormViewTests.swift in Sources */,
 				8EB9F0ED25D34F0100DA2111 /* UserViewTests.swift in Sources */,
