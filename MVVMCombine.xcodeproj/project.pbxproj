@@ -27,6 +27,8 @@
 		8E87EE7825C094FC00CE9603 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87EE7725C094FC00CE9603 /* APIManager.swift */; };
 		8E8CEED025DC0D8E0064AD76 /* UserFormViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8CEECF25DC0D8E0064AD76 /* UserFormViewControllerTests.swift */; };
 		8E8CEED525DC19960064AD76 /* MockUserFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8CEED425DC19960064AD76 /* MockUserFormViewModel.swift */; };
+		8E8CEEDC25DC26BC0064AD76 /* UserDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8CEEDB25DC26BC0064AD76 /* UserDetailViewControllerTests.swift */; };
+		8E8CEEE425DC2BAE0064AD76 /* MockUserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8CEEE325DC2BAE0064AD76 /* MockUserDetailViewModel.swift */; };
 		8EB9F0CD25D34B4C00DA2111 /* MVVMCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB9F0CC25D34B4C00DA2111 /* MVVMCombineTests.swift */; };
 		8EB9F0D825D34BDB00DA2111 /* MockApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB9F0D725D34BDB00DA2111 /* MockApiManager.swift */; };
 		8EB9F0E025D34D8200DA2111 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB9F0DF25D34D8200DA2111 /* users.json */; };
@@ -80,6 +82,8 @@
 		8E87EE7725C094FC00CE9603 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		8E8CEECF25DC0D8E0064AD76 /* UserFormViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewControllerTests.swift; sourceTree = "<group>"; };
 		8E8CEED425DC19960064AD76 /* MockUserFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserFormViewModel.swift; sourceTree = "<group>"; };
+		8E8CEEDB25DC26BC0064AD76 /* UserDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		8E8CEEE325DC2BAE0064AD76 /* MockUserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDetailViewModel.swift; sourceTree = "<group>"; };
 		8EB9F0CA25D34B4C00DA2111 /* MVVMCombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMCombineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB9F0CC25D34B4C00DA2111 /* MVVMCombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCombineTests.swift; sourceTree = "<group>"; };
 		8EB9F0CE25D34B4C00DA2111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				8E42A15525D41A0200EFD794 /* MockUserDetailView.swift */,
+				8E8CEEE325DC2BAE0064AD76 /* MockUserDetailViewModel.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -286,6 +291,24 @@
 			path = APIManager;
 			sourceTree = "<group>";
 		};
+		8E8CEED925DC25C20064AD76 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8E42A14625D4156000EFD794 /* Mocks */,
+				8E8CEEDA25DC25E10064AD76 /* View */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		8E8CEEDA25DC25E10064AD76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E42A14B25D418CA00EFD794 /* UserDetailViewTests.swift */,
+				8E8CEEDB25DC26BC0064AD76 /* UserDetailViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8EB9F0C425D34A8800DA2111 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,8 +332,8 @@
 		8EB9F0D625D34B6300DA2111 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				8E8CEED925DC25C20064AD76 /* UserDetail */,
 				8E17E27425D5D1DD00EEDB16 /* UserForm */,
-				8E42A14625D4156000EFD794 /* Mocks */,
 				8EB9F0DD25D34C5F00DA2111 /* View */,
 			);
 			path = Users;
@@ -320,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				8EB9F0EC25D34F0100DA2111 /* UserViewTests.swift */,
-				8E42A14B25D418CA00EFD794 /* UserDetailViewTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -550,7 +572,9 @@
 				8E17E28525D5D32400EEDB16 /* MockUserFormValidator.swift in Sources */,
 				8E8CEED025DC0D8E0064AD76 /* UserFormViewControllerTests.swift in Sources */,
 				8E17E28025D5D2A700EEDB16 /* MockUserFormView.swift in Sources */,
+				8E8CEEE425DC2BAE0064AD76 /* MockUserDetailViewModel.swift in Sources */,
 				8EB9F0D825D34BDB00DA2111 /* MockApiManager.swift in Sources */,
+				8E8CEEDC25DC26BC0064AD76 /* UserDetailViewControllerTests.swift in Sources */,
 				8E8CEED525DC19960064AD76 /* MockUserFormViewModel.swift in Sources */,
 				8E42A15625D41A0200EFD794 /* MockUserDetailView.swift in Sources */,
 				8E17E27825D5D21A00EEDB16 /* UserFormViewTests.swift in Sources */,

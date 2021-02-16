@@ -13,11 +13,16 @@ protocol UserDataDelegate {
     func failedFetchingData(error : Error)
 }
 
-class UserDetailsViewModel{
+protocol UserDetailViewModelDelegate {
+    init(apiManager : APIManagerDelegate, viewDelegate : UserDataDelegate)
+    func fetchUserById(endpoint : Endpoint)
+}
+
+class UserDetailsViewModel : UserDetailViewModelDelegate{
     private let apiManager   : APIManagerDelegate
     private var viewDelegate : UserDataDelegate?
     
-    init(apiManager : APIManagerDelegate, viewDelegate : UserDataDelegate){
+    required init(apiManager : APIManagerDelegate, viewDelegate : UserDataDelegate){
         self.apiManager = apiManager
         self.viewDelegate = viewDelegate
     }

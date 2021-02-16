@@ -17,9 +17,8 @@ class UserDetailViewController: UIViewController {
     
     
     var userSelected            : String!
-    private var viewModel       : UserDetailsViewModel!
+    var viewModel               : UserDetailViewModelDelegate!
     private let apiManager      = APIManager()
-    private var cancellable     = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +37,7 @@ class UserDetailViewController: UIViewController {
         viewModel = UserDetailsViewModel(apiManager: apiManager, viewDelegate: self)
     }
     
-    private func fetchUsers(){
+    func fetchUsers(){
         showAndHideActivity(show: true)
         viewModel.fetchUserById(endpoint: .getUserById(id: userSelected))
     }
@@ -52,7 +51,7 @@ class UserDetailViewController: UIViewController {
         }
     }
     
-    private func showUserInfo(user : UserDataToPrint){
+    func showUserInfo(user : UserDataToPrint){
         nameLabel.text      = user.name
         emailLabel.text     = user.email
         phoneLabel.text     = user.phone
