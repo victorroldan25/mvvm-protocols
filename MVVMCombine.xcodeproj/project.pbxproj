@@ -33,7 +33,6 @@
 		8E8CEEF925DC3AE60064AD76 /* UsersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8CEEF825DC3AE60064AD76 /* UsersViewControllerTests.swift */; };
 		8E8CEEFE25DC45EC0064AD76 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8CEEFD25DC45EC0064AD76 /* Constants.swift */; };
 		8EB9F0D825D34BDB00DA2111 /* MockApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB9F0D725D34BDB00DA2111 /* MockApiManager.swift */; };
-		8EB9F0E025D34D8200DA2111 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB9F0DF25D34D8200DA2111 /* users.json */; };
 		8EB9F0ED25D34F0100DA2111 /* UserViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB9F0EC25D34F0100DA2111 /* UserViewTests.swift */; };
 		8EFF4B4225C0923200B0216C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4B4125C0923200B0216C /* AppDelegate.swift */; };
 		8EFF4B4425C0923200B0216C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4B4325C0923200B0216C /* SceneDelegate.swift */; };
@@ -42,6 +41,7 @@
 		8EFF4B4B25C0923500B0216C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4B4A25C0923500B0216C /* Assets.xcassets */; };
 		8EFF4B4E25C0923500B0216C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4B4C25C0923500B0216C /* LaunchScreen.storyboard */; };
 		8EFF4B5D25C092B000B0216C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4B5C25C092B000B0216C /* UserModel.swift */; };
+		F97D7E9B25DDCB0A003A230B /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = F97D7E9A25DDCB0A003A230B /* users.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +92,6 @@
 		8EB9F0CA25D34B4C00DA2111 /* MVVMCombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMCombineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB9F0CE25D34B4C00DA2111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB9F0D725D34BDB00DA2111 /* MockApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiManager.swift; sourceTree = "<group>"; };
-		8EB9F0DF25D34D8200DA2111 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = users.json; path = ../../../../../../Documents/users.json; sourceTree = "<group>"; };
 		8EB9F0EC25D34F0100DA2111 /* UserViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewTests.swift; sourceTree = "<group>"; };
 		8EFF4B3E25C0923200B0216C /* MVVMCombine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMCombine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EFF4B4125C0923200B0216C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		8EFF4B4D25C0923500B0216C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EFF4B4F25C0923500B0216C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EFF4B5C25C092B000B0216C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F97D7E9A25DDCB0A003A230B /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,7 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				8E558A8B25D42CCF00B33515 /* user.json */,
-				8EB9F0DF25D34D8200DA2111 /* users.json */,
+				F97D7E9A25DDCB0A003A230B /* users.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -566,8 +566,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97D7E9B25DDCB0A003A230B /* users.json in Resources */,
 				8E558A8C25D42CCF00B33515 /* user.json in Resources */,
-				8EB9F0E025D34D8200DA2111 /* users.json in Resources */,
 				8EFF4B4E25C0923500B0216C /* LaunchScreen.storyboard in Resources */,
 				8EFF4B4B25C0923500B0216C /* Assets.xcassets in Resources */,
 				8E2E447025CB362400CED2E6 /* CustomCell.xib in Resources */,
