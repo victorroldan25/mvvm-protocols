@@ -42,7 +42,7 @@ class UsersViewControllerTests: XCTestCase {
     func testUsersViewController_ValidateIfTheNavigationBarTitleIsCorrect(){
         XCTAssertEqual(vc.title, "User List", "El título del NavigationBar no es correcto")
     }
-    
+    /*
     func testUsersViewController_AfterSelectingOneOptionIntoTableView_ShouldGoToUserDetailViewController(){
         //Inyecto dependencias al VM real y llamo al servicio
         let mockViewModel = UsersViewModel(apiManager: MockApiManager())
@@ -84,4 +84,5 @@ class UsersViewControllerTests: XCTestCase {
             return
         }
     }
+    */
 }

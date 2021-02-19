@@ -34,9 +34,9 @@ class UserFormViewTests: XCTestCase {
 
     //En este test quiero validar que se obtenga un error ya que el Name es muy corto.
     func testUserFormViewModel_CallProcessUpdateUser_ShouldFailTheTest(){
-        let userFormModel1 = UserFormModel(name: "Vi", email: "test@test.com", phone: "12345678910")
+        let userFormModel1 = UserFormModel(name: "Vi", email: "test@test.com", phone: "1234567890")
         viewModel.processUpdateUser(userFormModel: userFormModel1, endpoint: .updateUser)
-        XCTAssertTrue(mockViewDelegate.failValidations)
+        XCTAssertTrue(mockViewDelegate.failValidations, "Falló porque alguna de la data que enviaste no es correcta.")
         
     }
     
@@ -62,6 +62,7 @@ class UserFormViewTests: XCTestCase {
         //Debería fallar porque el teléfono es incorrecto
         XCTAssertFalse(mockUserValidator.isPhoneValid(phone: "1234567"))
     }
+    
     
     func testUserFormViewModel_FailEachValidation(){
         mockViewDelegate = MockUserFormView()

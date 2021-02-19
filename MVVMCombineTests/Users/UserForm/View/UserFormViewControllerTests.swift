@@ -54,11 +54,6 @@ class UserFormViewControllerTests: XCTestCase {
         
     }
     
-    func testUserFormViewController_ValidateIfTheButtonHasTheCorrectAttributes(){
-        XCTAssertEqual(vc.updateUserButton.tintColor, .systemBlue, "El botón updateUserButton no tiene el color correcto, debería ser .systemBlue")
-        XCTAssertEqual(vc.updateUserButton.titleColor(for: .normal), .white, "El botón updateUserButton no tiene el color de texto correcto, debería ser .white")
-    }
-    
     func testUserFormViewController_ValidateUITextFieldKeyboardType_ShouldHaveTheCorrectOnes(){
         XCTAssertEqual(vc.nameTextField.keyboardType, .default, "El keyboardType asignado a nameTextField no es el correcto, debería ser Defualt.")
         XCTAssertEqual(vc.emailTextField.keyboardType, .emailAddress, "El keyboardType asignado a emailTextField no es el correcto, debería ser EmailAddress.")
@@ -71,7 +66,7 @@ class UserFormViewControllerTests: XCTestCase {
         XCTAssertEqual(vc.phoneTextField.textContentType, .telephoneNumber, "El textContentType asignado a phoneTextField no es el correcto, debería ser PhonePad.")
     }
     
-    //Con este test busco validar que en el ViewController al presiionar el botón Update User, se haga el llamado al ViewModel
+    //Con este test busco validar que en el ViewController al presionar el botón Update User, se haga el llamado al ViewModel
     //En este caso se llama a un MockViewModel ya que lo que busco es validar el VC, no el VM.
     //Para ello se creó un MockViewModel que lo que hace es pasar a true una variable que indica que si se llamó luego de presionar el Botón.
     func testUserFormViewController_WhenButtonIsPressed_CallTheProcessUpdateUser(){
