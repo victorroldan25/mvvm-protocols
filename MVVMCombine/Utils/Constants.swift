@@ -9,3 +9,6 @@ import Foundation
 
 
 let tableViewAcceibilityIdentifier = "tableViewUsers"
+let userNameMaxLength = 20
+let userNameMinLength = 3
+let userPhoneMaxLength = 10

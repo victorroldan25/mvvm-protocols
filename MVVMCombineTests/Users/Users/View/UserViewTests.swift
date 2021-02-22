@@ -52,7 +52,7 @@ class UserViewTests: XCTestCase {
             UserModel(id: 3, name: "John 3", username: "johndoe3", email: "jonhdou3@test.com", phone: "32943239"),
         ]
         
-        //Call the formatDate to convert from UserModel to UserDataToPrint
+        //Llamar el método formatData para convertir de UserModel to UserDataToPrint
         let formattedData = viewModel.formatData(users: userModelMock)
         
         //Assertion to validate if it received a list

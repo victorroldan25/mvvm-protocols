@@ -42,47 +42,59 @@ class UsersViewControllerTests: XCTestCase {
     func testUsersViewController_ValidateIfTheNavigationBarTitleIsCorrect(){
         XCTAssertEqual(vc.title, "User List", "El título del NavigationBar no es correcto")
     }
-    /*
-    func testUsersViewController_AfterSelectingOneOptionIntoTableView_ShouldGoToUserDetailViewController(){
+    
+    func testUsersViewController_AfterDidSelectRowAtTableView_ShouldGoToUserDetailViewController(){
+        
+        let vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "usersVC") as! UsersViewController
+        vc2.loadViewIfNeeded()
+        let navigationController2 = UINavigationController(rootViewController: vc2)
+        
         //Inyecto dependencias al VM real y llamo al servicio
         let mockViewModel = UsersViewModel(apiManager: MockApiManager())
-        vc.viewModel = mockViewModel
-        vc.fetchUsers()
+        vc2.viewModel = mockViewModel
+        vc2.fetchUsers()
         
         //Hago tap en la fila completa para navegar a la siguiente pantalla
         let indexPath = IndexPath(row: 0, section: 0)
-        vc.tableView.delegate?.tableView?(vc.tableView, didSelectRowAt: indexPath)
+        vc2.tableView.delegate?.tableView?(vc2.tableView, didSelectRowAt: indexPath)
         
         //Esto es para que espere la animación del pushViewController
         RunLoop.current.run(until: Date())
 
         //Valido que el próximo viewController sea el correcto
-        guard let _ = navigationController.topViewController as? UserDetailViewController else{
+        guard let _ = navigationController2.topViewController as? UserDetailViewController else{
             XCTFail("El view que se está mostrando luego de seleccionar una opción, no es el correcto")
             return
         }
     }
     
-    func testUsersViewController_AfterSelectingOneOptionIntoTableView_ShouldGoToUserForm(){
+    
+    func testUsersViewController_AfterSelectingUpdateButtonIntoTableView_ShouldGoToUserForm(){
+        let vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "usersVC") as! UsersViewController
+        vc2.loadViewIfNeeded()
+        let navigationController2 = UINavigationController(rootViewController: vc2)
+        
         //Inyecto dependencias al VM real y llamo al servicio
         let mockViewModel = UsersViewModel(apiManager: MockApiManager())
-        vc.viewModel = mockViewModel
-        vc.fetchUsers()
-        
+        vc2.viewModel = mockViewModel
+        vc2.fetchUsers()
+
         //Como el APIManager es un Mock, obtengo los 10 resultados atomáticamente.
         //Selecciono la primera fila y presiono el Botón Update para que redireccione al Formulario.
         let indexPath = IndexPath(row: 0, section: 0)
-        let cell = vc.tableView.cellForRow(at: indexPath) as? CustomCell
+        let cell = vc2.tableView.cellForRow(at: indexPath) as? CustomCell
+        cell?.delegate = vc2
         cell?.updateButton.sendActions(for: .touchUpInside)
-        
+
         //Esto es para que espere la animación del pushViewController
         RunLoop.current.run(until: Date())
 
         //Valido que el próximo viewController sea el correcto
-        guard let _ = navigationController.topViewController as? UserFormViewController else{
+        guard let _ = navigationController2.topViewController as? UserFormViewController else{
             XCTFail("El view que se está mostrando luego de seleccionar el botón update, no es el correcto")
             return
         }
+
     }
-    */
+    
 }

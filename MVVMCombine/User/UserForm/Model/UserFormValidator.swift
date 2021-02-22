@@ -15,7 +15,7 @@ protocol UserFormValidatorDelegate {
 
 class UserFormValidator : UserFormValidatorDelegate{
     func isNameValid(name: String) -> Bool{
-        return (name.count >= 3 && name.count <= 20)
+        return (name.count >= userNameMinLength && name.count <= userNameMaxLength)
     }
     
     func isEmailValid(email: String) -> Bool{
@@ -30,7 +30,7 @@ class UserFormValidator : UserFormValidatorDelegate{
     }
     
     func isPhoneValid(phone: String) -> Bool{
-        return (phone.count == 10)
+        return (phone.count == userPhoneMaxLength && (Int(phone) != nil))
     }
     
     

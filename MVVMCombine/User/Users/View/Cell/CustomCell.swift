@@ -22,6 +22,7 @@ class CustomCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        updateButton.addTarget(self, action: #selector(tapMePressed), for: .touchUpInside)
     }
 
     
@@ -32,7 +33,7 @@ class CustomCell: UITableViewCell {
         self.phoneLabelString.text = userData.phone
     }
     
-    @IBAction func tapMePressed(_ sender: Any) {
+    @objc func tapMePressed() {
         delegate?.didTapCell(modelSelected : self.cellModel)
     }
 }
